@@ -18,4 +18,9 @@ module.exports = {
     "@tanstack/query/prefer-query-object-syntax": "error",
     "no-console": "warn",
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 };
