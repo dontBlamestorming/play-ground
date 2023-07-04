@@ -4,6 +4,7 @@ import userRoutes from "./routes/user";
 import adminRoutes from "./routes/admin";
 import companyRoutes from "./routes/company";
 import Counter from "./components/Counter";
+import { ModalContextProvider } from "./components/common/modal/context/ModalContext";
 
 const router = createBrowserRouter([userRoutes, adminRoutes, companyRoutes]);
 
@@ -14,10 +15,10 @@ const App = () => {
    */
 
   return (
-    <>
+    <ModalContextProvider>
       <RouterProvider router={router} />
       <Counter />
-    </>
+    </ModalContextProvider>
   );
 };
 

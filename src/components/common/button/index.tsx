@@ -1,19 +1,11 @@
-import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
+type Props = React.ComponentPropsWithoutRef<"button">;
 
-type DesignType = "primary" | "secondary";
+const Button = (props: Props) => {
+  const className = `bg-primary rounded-xLarge text-white px-6 py-2 ${
+    props.className ?? ""
+  }`;
 
-interface Props extends React.ComponentPropsWithoutRef<"button"> {
-  designType?: DesignType;
-}
-
-const Button = ({ designType = "primary", ...props }: Props) => {
-  switch (designType) {
-    case "secondary":
-      return <SecondaryButton {...props} />;
-    default:
-      return <PrimaryButton {...props} />;
-  }
+  return <button {...props} className={className} />;
 };
 
 export default Button;
