@@ -28,6 +28,7 @@ const SignInForm = () => {
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleSubmit)}>
         <Input {...methods.register("email")} className="bg-b7" />
+        <Input {...methods.register("email")} />
         <Input
           className="bg-secondary"
           onChange={(e) => setValue(e.target.value)}
