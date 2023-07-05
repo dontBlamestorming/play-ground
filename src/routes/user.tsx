@@ -1,7 +1,8 @@
+import { RouteObject } from "react-router-dom";
+
 import UserLayout from "@/layout/UserLayout";
 import Home from "@/pages/user/home";
 import SignInPage from "@/pages/user/sign-in";
-import { RouteObject } from "react-router-dom";
 
 const userRoutes: RouteObject = {
   path: "/",

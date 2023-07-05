@@ -1,5 +1,7 @@
 import { FormProvider, useForm } from "react-hook-form";
 import Input from "../common/input";
+import Button from "../common/button";
+import { useState } from "react";
 
 interface FormData {
   email: string;
@@ -20,10 +22,18 @@ const SignInForm = () => {
     return data;
   };
 
+  const [value, setValue] = useState("");
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleSubmit)}>
-        <Input />
+        <Input {...methods.register("email")} className="bg-b7" />
+        <Input
+          className="bg-secondary"
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
+        />
+        <Button type="submit">회원가입</Button>
       </form>
     </FormProvider>
   );
